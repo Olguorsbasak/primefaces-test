@@ -79,7 +79,6 @@ public class UIGreet extends UIOutput {
         }
         writer.write(greetText + " " + value);
         writer.endElement("span");
-
     }
 
 }

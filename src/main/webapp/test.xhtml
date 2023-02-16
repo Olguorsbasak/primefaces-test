@@ -5,19 +5,14 @@
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:jsf="http://xmlns.jcp.org/jsf"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+    xmlns:o="http://olgu.com">
 
     <h:head>
         <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
     </h:head>
     <h:body>
-
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
-            
-        </h:form>
-
+        <h1 style="color:blue">PrimeFaces Test</h1>
+        <o:hello greetText="Hello" value="Prime"  size="1"  class="greet" style="color:blue" />
     </h:body>
 </html>

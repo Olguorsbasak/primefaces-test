@@ -17,7 +17,7 @@ public class UIGreet extends UIOutput {
         greetText,
         size,
         styleClass,
-        style
+        onclick,
     }
 
     public String getGreetText() {
@@ -35,6 +35,7 @@ public class UIGreet extends UIOutput {
     public void setSize(String size) {
         getStateHelper().put(PropertyKeys.size, size);
     }
+    
     public String getStyleClass() {
         return (String) getStateHelper().eval(PropertyKeys.styleClass, null);
     }
@@ -43,12 +44,12 @@ public class UIGreet extends UIOutput {
         getStateHelper().put(PropertyKeys.styleClass, styleClass);
     }
     
-    public String getStyle() {
-        return (String) getStateHelper().eval(PropertyKeys.style, null);
+    public String getOnclick() {
+        return (String) getStateHelper().eval(PropertyKeys.onclick, null);
     }
     
-    public void setStyle(String style) {
-        getStateHelper().put(PropertyKeys.style, style);
+    public void setOnclick(String onclick) {
+        getStateHelper().put(PropertyKeys.onclick, onclick);
     }
     
 
@@ -58,7 +59,6 @@ public class UIGreet extends UIOutput {
         String value = (String) getValue();
         String size = getSize();
         String styleClass=getStyleClass();
-        String style=getStyle();
 
         if(size !=null){
             int headerSize=Integer.parseInt(size);
@@ -74,9 +74,10 @@ public class UIGreet extends UIOutput {
         if(styleClass !=null){
             writer.writeAttribute("class",styleClass,null);
         }
-        if(style !=null){
-            writer.writeAttribute("style",style,null);
+        if(getOnclick() !=null){
+            writer.writeAttribute("onclick",getOnclick(),null);
         }
+        
         writer.write(greetText + " " + value);
         writer.endElement("span");
     }

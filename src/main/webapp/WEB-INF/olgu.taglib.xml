@@ -9,5 +9,10 @@
         <component-type>UIGreet</component-type>
     </component>
   </tag>
-  
+  <tag>
+    <tag-name>custom-input</tag-name>
+    <component>
+        <component-type>MyInput</component-type>
+    </component>
+  </tag>
 </facelet-taglib>
